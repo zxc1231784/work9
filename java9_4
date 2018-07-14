@@ -1,0 +1,24 @@
+package java9_4;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;//要匯入
+
+public class java9_4 {
+
+	public static void main(String[] args) {
+
+		List<String> s = new ArrayList<>();
+		String names[] = { "張君雅", "潘美雪", "劉雪莉", "黃彬彬", "潘美雪", "黃美華", "劉雪麗", "黃彬彬", "潘美雪", "潘美雪" };
+
+		for (int i = 0; i < names.length; i++) {
+			s.add(names[i]);
+		}
+		System.out.println(s);
+		Arrays.sort(names);// 排序的方法
+		for (int i = 0; i < names.length; i++)
+			System.out.print(names[i] + "\t");
+
+	}
+
+}
