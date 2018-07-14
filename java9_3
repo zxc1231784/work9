@@ -1,0 +1,20 @@
+package java9_3;
+
+import java.util.*;
+
+public class java9_3 {
+
+	public static void main(String[] args) {
+		List<Double> ad=new ArrayList<>();
+		List<Double> ad1=new ArrayList<>();
+		ad.add(98d);
+		ad.add(12.345);
+		ad.add(97.85);
+		ad.add(12d);
+		System.out.println(ad);
+		Collections.sort(ad);//排序的方法
+		System.out.println(ad);
+
+	}
+
+}
