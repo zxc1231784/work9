@@ -1,0 +1,66 @@
+package java9_5;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class java9_5 {
+	public static void main(String[] args) {
+          BoyFriend bf1 =  new BoyFriend("溫小彬", 50000, 168);
+          BoyFriend bf2 =  new BoyFriend("劉幼傑", 65000, 170);
+          BoyFriend bf3 =  new BoyFriend("王丹丹", 75000, 160);
+          BoyFriend bf4 =  new BoyFriend("周星星", 50000, 165);
+          BoyFriend bf5 =  new BoyFriend("趙初明", 50000, 170);
+          List<BoyFriend> c = new ArrayList<>();
+          c.add(bf1);
+          c.add(bf2);
+          c.add(bf3);
+          c.add(bf4);
+          c.add(bf5);
+		//Collections.sort((List<T>),new Comparator(null,0,0)) ;
+          Collections.sort(c,new BoyFriend(null,0,0));
+
+          for(BoyFriend bf: c){
+        	  System.out.println(bf);
+          }
+
+
+
+          }
+	}
+
+
+------------------------------------------------------------
+package java9_5;
+
+import java.util.Comparator;
+import java.util.Collections;
+
+public class BoyFriend implements Comparator<BoyFriend>{
+	String name;
+	int annualSalary;
+	double height;
+
+	public BoyFriend(String name, int annualSalary, double height) {
+		super();
+		this.name = name;
+		this.annualSalary = annualSalary;
+		this.height = height;
+	}
+
+	public String toString() {
+		return name + "  年薪:" + annualSalary + " 身高:" + height;
+	}
+
+	
+	public int compare(BoyFriend o1, BoyFriend o2) {
+		 if(o1.annualSalary==o2.annualSalary) {
+			 return (int) (o2.height-o1.height);
+		 }else {
+			 return o2.annualSalary-o1.annualSalary;
+		 }
+		
+	}
+
+}
+
